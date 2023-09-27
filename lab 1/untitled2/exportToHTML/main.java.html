@@ -1,0 +1,69 @@
+<html>
+<head>
+<title>main.java</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<style type="text/css">
+.s0 { color: #cc7832;}
+.s1 { color: #a9b7c6;}
+.s2 { color: #6897bb;}
+.s3 { color: #6a8759;}
+</style>
+</head>
+<body bgcolor="#2b2b2b">
+<table CELLSPACING=0 CELLPADDING=5 COLS=1 WIDTH="100%" BGCOLOR="#606060" >
+<tr><td><center>
+<font face="Arial, Helvetica" color="#000000">
+main.java</font>
+</center></td></tr></table>
+<pre><span class="s0">import </span><span class="s1">java.util.Calendar</span><span class="s0">;</span>
+
+<span class="s0">class </span><span class="s1">EquationCalculator {</span>
+    <span class="s0">private double </span><span class="s1">a</span><span class="s0">;</span>
+    <span class="s0">private double </span><span class="s1">b</span><span class="s0">;</span>
+    <span class="s0">private double </span><span class="s1">x</span><span class="s0">;</span>
+
+    <span class="s0">public </span><span class="s1">EquationCalculator(</span><span class="s0">double </span><span class="s1">a</span><span class="s0">,double </span><span class="s1">b</span><span class="s0">, double </span><span class="s1">x) {</span>
+        <span class="s0">this</span><span class="s1">.a = a</span><span class="s0">;</span>
+        <span class="s0">this</span><span class="s1">.b = b</span><span class="s0">;</span>
+        <span class="s0">this</span><span class="s1">.x = x</span><span class="s0">;</span>
+    <span class="s1">}</span>
+
+    <span class="s0">public double </span><span class="s1">calculateY() {</span>
+        <span class="s0">double </span><span class="s1">y = Math.pow(Math.sin(Math.pow(x</span><span class="s0">, </span><span class="s2">2</span><span class="s1">) + a)</span><span class="s0">, </span><span class="s2">3</span><span class="s1">) - Math.sqrt(x/b)</span><span class="s0">;</span>
+        <span class="s0">return </span><span class="s1">y</span><span class="s0">;</span>
+    <span class="s1">}</span>
+    <span class="s0">public double </span><span class="s1">calculateZ() {</span>
+        <span class="s0">double </span><span class="s1">z = (Math.pow(x</span><span class="s0">, </span><span class="s2">3</span><span class="s1">) / a) + Math.pow(Math.cos(x + b)</span><span class="s0">,</span><span class="s2">3</span><span class="s1">)</span><span class="s0">;</span>
+        <span class="s0">return </span><span class="s1">z</span><span class="s0">;</span>
+    <span class="s1">}</span>
+
+    <span class="s0">public void </span><span class="s1">printCurrentDate() {</span>
+        <span class="s1">Calendar calendar = Calendar.getInstance()</span><span class="s0">;</span>
+        <span class="s0">int </span><span class="s1">dayOfWeek = calendar.get(Calendar.DAY_OF_WEEK)</span><span class="s0">;</span>
+        <span class="s0">int </span><span class="s1">dayOfMonth = calendar.get(Calendar.DAY_OF_MONTH)</span><span class="s0">;</span>
+        <span class="s0">int </span><span class="s1">month = calendar.get(Calendar.MONTH) + </span><span class="s2">1</span><span class="s0">;</span>
+
+        <span class="s1">System.out.println(</span><span class="s3">&quot;День тижня : &quot; </span><span class="s1">+ dayOfWeek)</span><span class="s0">;</span>
+        <span class="s1">System.out.println(</span><span class="s3">&quot;День місяця : &quot; </span><span class="s1">+ dayOfMonth)</span><span class="s0">;</span>
+        <span class="s1">System.out.println(</span><span class="s3">&quot;Місяць : &quot; </span><span class="s1">+ month)</span><span class="s0">;</span>
+    <span class="s1">}</span>
+
+    <span class="s0">public static void </span><span class="s1">main(String[] args) {</span>
+        <span class="s0">double </span><span class="s1">a = </span><span class="s2">1.1</span><span class="s0">;</span>
+        <span class="s0">double </span><span class="s1">b = </span><span class="s2">0.004</span><span class="s0">;</span>
+        <span class="s0">double </span><span class="s1">x = </span><span class="s2">0.2</span><span class="s0">;</span>
+
+        <span class="s1">EquationCalculator calculator =</span><span class="s0">new </span><span class="s1">EquationCalculator(a</span><span class="s0">, </span><span class="s1">b</span><span class="s0">, </span><span class="s1">x)</span><span class="s0">;</span>
+
+        <span class="s0">double </span><span class="s1">y = calculator.calculateY()</span><span class="s0">;</span>
+        <span class="s0">double </span><span class="s1">z = calculator.calculateZ()</span><span class="s0">;</span>
+
+        <span class="s1">System.out.println(</span><span class="s3">&quot; Y : &quot; </span><span class="s1">+ y)</span><span class="s0">;</span>
+        <span class="s1">System.out.println(</span><span class="s3">&quot; Z : &quot; </span><span class="s1">+ z)</span><span class="s0">;</span>
+
+        <span class="s1">calculator.printCurrentDate()</span><span class="s0">;</span>
+
+    <span class="s1">}</span>
+<span class="s1">}</span></pre>
+</body>
+</html>
